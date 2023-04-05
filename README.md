@@ -1,6 +1,9 @@
 Nama    : Faniel Sianipar
+
 Asal Perguruan tinggi : Universitas Lampung
+
 Stack yang dipakai : Laravel Breeze v1.9.0
+
 Cara menjalankan Aplikasi : 
 1. composer Install
 2. php artisan migrate

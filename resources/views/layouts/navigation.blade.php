@@ -18,6 +18,9 @@
                     <x-nav-link>
                         <a class="nav-link active border" href="{{ url('category') }}">Category</a>
                     </x-nav-link>
+                    <x-nav-link>
+                        <a class="nav-link active border" href="{{ url('product') }}">Product</a>
+                    </x-nav-link>
                 </div>
             </div>
 

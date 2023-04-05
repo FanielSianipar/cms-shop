@@ -45,7 +45,7 @@ class CategoryController extends Controller
             'name' => $validated['category_name']
         ]);
 
-        return redirect('category-page.add');
+        return redirect('category/add');
     }
 
     /**
@@ -89,7 +89,7 @@ class CategoryController extends Controller
             'name' => $validated['category_name']
         ]);
 
-        return redirect('category-page.category');
+        return redirect('category');
     }
 
     /**
@@ -100,6 +100,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        return redirect('category-page.category');
+        Category::destroy($id);
+        return redirect('category');
     }
 }

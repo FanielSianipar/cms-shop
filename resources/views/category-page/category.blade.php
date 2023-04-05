@@ -13,8 +13,8 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
                     <br>
-                    <a href="{{ url('category/addCategory') }}">
-                        <button class="btn btn-danger mb-4" type="button">+ Add Category</button>
+                    <a href="{{ url('category/add') }}">
+                        <button class="btn btn-primary mb-4" type="button">+ Add Category</button>
                     </a>
                     @foreach ($categories as $item)
                         <div class="card mb-3">
@@ -22,10 +22,10 @@
                                 <div class="card-title">
                                     <h3>Category: {{ $item->name }}</h3>
                                 </div>
-                                <a href="product/{{ $item->id }}/edit">
+                                <a href="category/{{ $item->id }}/edit">
                                     <button class="btn btn-warning mt-2" type="button">Edit</button>
                                 </a>
-                                <a href="product/{{ $item->id }}/delete">
+                                <a href="category/{{ $item->id }}/delete">
                                     <button class="btn btn-danger mt-2" type="button">Delete</button>
                                 </a>
                             </div>

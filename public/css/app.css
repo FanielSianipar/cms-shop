@@ -1419,3 +1419,6 @@ select {
   }
 }
 
+.card {
+    background-color: grey;
+}

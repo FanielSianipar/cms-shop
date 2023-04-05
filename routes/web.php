@@ -31,6 +31,6 @@ Route::get('/category/add', [CategoryController::class, 'create']);
 Route::get('/category/{id}/edit', [CategoryController::class, 'edit']);
 Route::get('/category/{id}/delete', [CategoryController::class, 'destroy']);
 Route::post('/category', [CategoryController::class, 'store']);
-// Route::put('/category/{id}', [CategoryController::class, 'update']);
+Route::put('/category/{id}', [CategoryController::class, 'update']);
 
 require __DIR__.'/auth.php';

@@ -25,9 +25,9 @@
                                     </div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary mt-2">Save</button> <br>
+                            <button class="btn btn-primary mt-2">Save</button> <br>
                             <a href="{{ url('category') }}">
-                                <button class="btn btn-danger mt-2" type="button">Cancel</button>
+                                <button class="btn btn-danger mt-2">Cancel</button>
                             </a>
                         </form>
                     </div>

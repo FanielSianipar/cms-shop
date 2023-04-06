@@ -14,7 +14,7 @@
                         <br>
                         <form action="{{ url('category') }}" method='POST'>
                             @csrf
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <label class="form-label">Nama Kategori</label>
                                 <input type="text" class="form-control @error('category_name') is-invalid @enderror"
                                     name="category_name" maxlength="255">
@@ -25,9 +25,9 @@
                                     </div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary mt-2">Add</button> <br>
+                            <button class="btn btn-primary">Add</button> <br>
                             <a href="{{ url('category') }}">
-                                <button class="btn btn-danger mt-2" type="button">Back</button>
+                                <button class="btn btn-danger mt-2">Back</button>
                             </a>
                         </form>
                     </div>

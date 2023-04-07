@@ -70,9 +70,9 @@
                             </select>
                             <button class="btn btn-primary mt-2">Add</button>
                         </form>
-                            <a href="{{ url('product') }}">
-                                <button class="btn btn-danger mt-2">Back</button>
-                            </a>
+                        <a href="{{ url('product') }}">
+                            <button class="btn btn-danger mt-2">Back</button>
+                        </a>
                     </div>
                 </div>
             </div>

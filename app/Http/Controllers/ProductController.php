@@ -81,8 +81,6 @@ class ProductController extends Controller
         $data['categories'] = Category::all();
         $data['product'] = Product::find($id);
 
-        // dd($id);
-
         return view('product-page.edit', $data);
     }
 

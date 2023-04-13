@@ -23,10 +23,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-// Route::get('/category', function () {
-//     return view('category-page.category');
-// })->middleware(['auth'])->name('category');
-
 // Category
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/add', [CategoryController::class, 'create']);

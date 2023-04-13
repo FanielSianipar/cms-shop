@@ -1,9 +1,9 @@
-@section('title', 'Edit Product')
+@section('title', 'Add Product')
 
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit Product') }}
+            {{ __('Add Product') }}
         </h2>
     </x-slot>
     <x-slot name="slot">
@@ -11,25 +11,70 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <form action="/category/{{ $category->id }}" method="POST">
-                            @method("PUT")
+                        <br>
+                        <form action="/product/{{ $product }}" method="POST">
+                            @method('PUT')
                             @csrf
                             <div class="mb-3">
-                                <label class="form-label">Nama Kategori</label>
-                                <input type="text" class="form-control @error('category_name') is-invalid @enderror"
-                                    name="category_name" maxlength="255" value="{{ $category->name }}">
-                                <div class="form-text">Nama Kategori tidak boleh lebih dari 255 karakter</div>
-                                @error('category_name')
+                                <label class="form-label">Nama Produk</label>
+                                <input type="text" class="form-control @error('product_name') is-invalid @enderror"
+                                    name="product_name" maxlength="255" value="{{ $product->name }}">
+                                <div class="form-text">Nama Produk tidak boleh lebih dari 255 karakter</div>
+                                @error('product_name')
                                     <div class="invalid-feedback">
-                                        Nama Kategori tidak boleh kosong
+                                        Nama Produk tidak boleh kosong
                                     </div>
                                 @enderror
                             </div>
-                            <button class="btn btn-primary mt-2">Save</button> <br>
-                            <a href="{{ url('category') }}">
-                                <button class="btn btn-danger mt-2">Cancel</button>
-                            </a>
+                            <div class="mb-3">
+                                <label class="form-label">Stock</label>
+                                <input type="text" class="form-control @error('product_stock') is-invalid @enderror"
+                                    name="product_stock" value="{{ $product->stock }}">
+                                @error('product_stock')
+                                    <div class="invalid-feedback">
+                                        Stock tidak boleh kosong & harus berupa angka
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Deskripsi</label>
+                                <input type="text"
+                                    class="form-control @error('product_description') is-invalid @enderror"
+                                    name="product_description" value="{{ $product->description }}">
+                                @error('product_description')
+                                    <div class="invalid-feedback">
+                                        Deskripsi tidak boleh kosong
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Harga</label>
+                                <input type="text" class="form-control @error('product_price') is-invalid @enderror"
+                                    name="product_price" value="{{ $product->price }}">
+                                @error('product_price')
+                                    <div class="invalid-feedback">
+                                        Harga tidak boleh kosong & harus berupa angka
+                                    </div>
+                                @enderror
+                            </div>
+                            <select class="form-select @error('category_id') is-invalid @enderror" name="category_id">
+                                <option selected>Pilih Kategori Produk</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}"
+                                        {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                                        {{ $category->name }}</option>
+                                @endforeach
+                                @error('category_id')
+                                    <div class="invalid-feedback">
+                                        Pilih Kategori
+                                    </div>
+                                @enderror
+                            </select>
+                            <button class="btn btn-primary mt-2">Add</button>
                         </form>
+                        <a href="{{ url('product') }}">
+                            <button class="btn btn-danger mt-2">Back</button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -109,7 +109,7 @@ class ProductController extends Controller
             'category_id' => $validated['category_id']
         ]);
 
-        return redirect('product-page/product');
+        return redirect('product');
     }
 
     /**

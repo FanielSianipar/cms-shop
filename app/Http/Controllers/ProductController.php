@@ -76,10 +76,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $id)
+    public function edit($id)
     {
         $data['categories'] = Category::all();
         $data['product'] = Product::find($id);
+
+        // dd($id);
 
         return view('product-page.edit', $data);
     }

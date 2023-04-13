@@ -12,7 +12,7 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <br>
-                        <form action="/product/{{ $product }}" method="POST">
+                        <form action="/product/{{ $product->id }}" method="POST">
                             @method('PUT')
                             @csrf
                             <div class="mb-3">

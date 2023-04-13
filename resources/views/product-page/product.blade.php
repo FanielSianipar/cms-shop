@@ -28,10 +28,10 @@
                                     {{ $item->description }}
                                 </div>
                                 <a href="product/{{ $item->id }}/edit">
-                                    <button class="btn btn-warning mt-2" type="button">Edit</button>
+                                    <button class="btn btn-warning mt-2">Edit</button>
                                 </a>
                                 <a href="product/{{ $item->id }}/delete">
-                                    <button class="btn btn-danger mt-2" type="button">Delete</button>
+                                    <button class="btn btn-danger mt-2">Delete</button>
                                 </a>
                             </div>
                         </div>

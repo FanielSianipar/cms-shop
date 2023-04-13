@@ -56,7 +56,7 @@ class ProductController extends Controller
             'category_id' => $validated['category_id']
         ]);
 
-        return redirect('product-page/add');
+        return redirect('product');
     }
 
     /**
@@ -121,6 +121,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::destroy($id);
-        return redirect('product-page/product');
+        return redirect('product');
     }
 }

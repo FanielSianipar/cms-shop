@@ -45,7 +45,7 @@ class CategoryController extends Controller
             'name' => $validated['category_name']
         ]);
 
-        return redirect('category/add');
+        return redirect('category');
     }
 
     /**
